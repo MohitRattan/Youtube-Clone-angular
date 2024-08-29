@@ -1,0 +1,7 @@
+<p>
+    Image/Video Preview
+  </p>
+  
+  <img [src]="url" *ngIf="format==='image' && url" height="200"> <br/>
+  <video [src]="url" *ngIf="format==='video' && url" height="200" controls></video> <br/>
+  <input type='file' (change)="onSelectFile($event)" />

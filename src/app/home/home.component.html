@@ -1,0 +1,29 @@
+<div [ngClass]="currentTheme">
+  <div class="video-grid">
+    <div class="button-container" [ngClass]="currentTheme">
+      <button (click)="showAllVideos()" class="btn btn-primary">All</button>
+      <button *ngFor="let category of categories" (click)="showCategoryVideos(category)" class="btn btn-category" [ngClass]="currentTheme">
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="video-container">
+      <div class="thumbnail-container" *ngFor="let video of currentVideos" (click)="playVideo(video)">
+        <div *ngIf="!video.isPlaying">
+          <img [src]="getThumbnailUrl(video.thumbnail)" alt="{{ video.title }}" />
+          <div class="video-actions" [ngClass]="currentTheme">
+            <img [src]="getThumbnailUrl(video.thumbnail)" alt="Logo" class="logo" />
+            <h3>{{ video.title }}</h3>
+            <button (click)="likeVideo(video)" class="btn btn-like">
+              <i class="fa fa-thumbs-up"></i> Like
+            </button>
+            <button (click)="downloadVideo(video)" class="btn btn-download">
+              <i class="fa fa-download"></i> Download
+            </button>
+          </div>
+        </div>
+        <iframe *ngIf="video.isPlaying" [src]="getSafeUrl(video.thumbnail)" width="360" height="315" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<nav id="sidebar" 
+     [ngClass]="{
+       'expanded': isSidenavOpen, 
+       'collapsed': !isSidenavOpen, 
+       'light-theme-sidebar': !isDarkTheme, 
+       'dark-theme-sidebar': isDarkTheme
+     }" 
+     class="sidebar col-md-3 col-lg-2">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/home']">
+        <i class="bi bi-house-door-fill icon-spacing" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+        <span *ngIf="isSidenavOpen" class="nav-label" [ngClass]="{'light-label': !isDarkTheme, 'dark-label': isDarkTheme}">Home</span>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" (click)="checkAuthenticationAndNavigate('/download')">
+        <i class="bi bi-film icon-spacing" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+        <span *ngIf="isSidenavOpen" class="nav-label" [ngClass]="{'light-label': !isDarkTheme, 'dark-label': isDarkTheme}">Downloads</span>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" (click)="checkAuthenticationAndNavigate('/like')">
+        <i class="bi bi-heart-fill icon-spacing" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+        <span *ngIf="isSidenavOpen" class="nav-label" [ngClass]="{'light-label': !isDarkTheme, 'dark-label': isDarkTheme}">Liked Video</span>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/shorts']">
+        <i class="bi bi-play-btn-fill icon-spacing" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+        <span *ngIf="isSidenavOpen" class="nav-label" [ngClass]="{'light-label': !isDarkTheme, 'dark-label': isDarkTheme}">Shorts</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Main content area -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+

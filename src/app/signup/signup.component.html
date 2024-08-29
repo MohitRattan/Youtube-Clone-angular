@@ -1,0 +1,39 @@
+<div class="container">
+  <h3>Create An Account First</h3>
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="sign-up-form">
+    <div class="form-group">
+      <label for="UserName">UserName</label>
+      <input formControlName="UserName" placeholder="UserName" type="text" id="UserName" required>
+      <div class="error" *ngIf="signUpForm.get('UserName')?.invalid && signUpForm.get('UserName')?.touched">
+        <small *ngIf="signUpForm.get('UserName')?.hasError('required')">Username is required.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="User_Email">Email</label>
+      <input formControlName="User_Email" type="email" placeholder="Email" id="User_Email" required>
+      <div class="error" *ngIf="signUpForm.get('User_Email')?.invalid && signUpForm.get('User_Email')?.touched">
+        <small *ngIf="signUpForm.get('User_Email')?.hasError('required')">Email is required.</small>
+        <small *ngIf="signUpForm.get('User_Email')?.hasError('email')">Invalid email format.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="User_Password">Password</label>
+      <input formControlName="User_Password" type="password" placeholder="Password" id="User_Password" required>
+      <div class="error" *ngIf="signUpForm.get('User_Password')?.invalid && signUpForm.get('User_Password')?.touched">
+        <small *ngIf="signUpForm.get('User_Password')?.hasError('required')">Password is required.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input formControlName="confirmPassword" type="password" placeholder="Confirm Password" id="confirmPassword" required>
+      <div class="error" *ngIf="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword')?.touched">
+        <small *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">Confirm Password is required.</small>
+        <small *ngIf="signUpForm.hasError('passwordMismatch')">Passwords must match.</small>
+      </div>
+    </div>
+    <button type="submit" [disabled]="signUpForm.invalid">Submit</button>
+    <span>Already have an account? 
+      <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+    </span>
+  </form>
+</div>

@@ -1,0 +1,63 @@
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.light-theme-navbar {
+  background-color: #ffffff; 
+  color: #000000; 
+}
+
+.light-theme-navbar .navbar-toggler-icon {
+  background-color: #000; 
+}
+
+.light-theme-navbar .btn-secondary {
+  background-color: #e0e0e0; 
+  color: #000; 
+}
+
+.light-theme-navbar .btn-secondary:hover {
+  background-color: #d0d0d0; /* Light theme hover background color for buttons */
+}
+
+.light-theme-navbar .dropdown-menu {
+  background-color: #ffffff; /* Light theme background color for dropdown menu */
+  color: #000; /* Light theme text color for dropdown menu items */
+}
+
+/* Dark Theme Navbar Styles */
+.dark-theme-navbar {
+  background-color: #000000; /* Dark theme background color for navbar */
+  color: #f5f5f5; /* Dark theme text color for navbar */
+}
+
+.dark-theme-navbar .navbar-toggler-icon {
+  background-color: #f5f5f5; /* Dark theme color for the toggler icon */
+}
+
+.dark-theme-navbar .btn-secondary {
+  background-color: #000000; /* Dark theme background color for buttons */
+  color: #f5f5f5; /* Dark theme text color for buttons */
+}
+
+.dark-theme-navbar .btn-secondary:hover {
+  background-color: #000000; /* Dark theme hover background color for buttons */
+}
+
+.dark-theme-navbar .dropdown-menu {
+  background-color: #333333; /* Dark theme background color for dropdown menu */
+  color: #f5f5f5; /* Dark theme text color for dropdown menu items */
+}
+
+/* Icon Styles */
+.light-icon {
+  color: #000000; /* Light theme color for icons */
+}
+
+.dark-icon {
+  color: #f5f5f5; /* Dark theme color for icons */
+}

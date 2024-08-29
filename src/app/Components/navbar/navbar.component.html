@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand" [ngClass]="isDarkTheme ? 'dark-theme-navbar' : 'light-theme-navbar'">
+  <div class="container-fluid">
+    <ul class="navbar-nav"> 
+      <li class="nav-item">
+        <a class="nav-link" (click)="toggleSidenav()">
+          <i class="bi bi-list" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+        </a>
+      </li>
+    </ul>
+    
+    <a class="navbar-brand" href="#">
+      <img [src]="brandImageUrl" id="brandImage" width="150" height="78.5">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+         
+      <div class="input-group rounded-search" style="width: 700px;height: 38px;margin-left: 180px;margin-right: 250px;">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" (input)="onSearch($event)">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" (click)="onSearch($event)">
+            <i class="fa fa-search"></i>
+          </button>
+          <button class="btn ">
+            <i class="fa fa-microphone" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+          </button>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-video" [ngClass]="isDarkTheme ? 'dark-icon' : 'light-icon'"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" (click)="uploadVideo()">Upload Video</a></li>
+          
+          <li><a class="dropdown-item" (click)="liveVideo()">Live Video</a></li>
+        </ul>
+      </div>
+      <button (click)="toggleTheme()" class="btn theme-toggle mx-3">
+        <i [ngClass]="isDarkTheme ? 'fa fa-sun dark-icon' : 'fa fa-moon light-icon'"></i>
+      </button>
+      <a class="nav-link mx-3" (click)="redirectToSignup()">
+        <i [ngClass]="isDarkTheme ? 'fa fa-user dark-icon' : 'fa fa-user light-icon'"></i>
+      </a>
+      
+    </div>
+  </div>
+</nav>
+<app-sidenav></app-sidenav>

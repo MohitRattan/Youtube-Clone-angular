@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+/* Define variables for light theme */
+:root {
+    --btn-like-color-light: #000000;
+    --btn-like-border-light: #000000;
+    --btn-download-color-light: #000000;
+    --btn-download-border-light: #000000;
+
+    /* Light theme colors */
+    --btn-text-light: #ffffff;
+}
+
+/* Define variables for dark theme */
+[data-theme="dark"] {
+    --btn-like-color-dark: #ffffff;
+    --btn-like-border-dark: #ffffff;
+    --btn-download-color-dark: #ffffff;
+    --btn-download-border-dark: #ffffff;
+
+    /* Dark theme colors */
+    --btn-text-dark: #000000;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Downloaded Videos</h2>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let video of downloadedVideos | keyvalue">
+      <div class="card mb-4">
+        <img [src]="getThumbnailUrl(video.key)" class="card-img-top" alt="Video Thumbnail">
+        <div class="card-body">
+          <h5 class="card-title">{{ video.key }}</h5>
+          <p class="card-text">Downloaded Video</p>
+          <button class="btn btn-primary" (click)="playVideo(video.key)">Play</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

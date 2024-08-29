@@ -1,0 +1,218 @@
+/* Video Grid Container */
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  /* padding: 20px; */
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Button Styles */
+.btn-category {
+  background-color: #efebeb;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-category:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+/* Video Container */
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* Thumbnail Container */
+.thumbnail-container {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-container:hover {
+  transform: scale(1.05);
+}
+
+/* Thumbnail Image */
+.thumbnail-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Video Details */
+.video-details {
+  padding: 10px;
+  text-align: left;
+}
+
+.video-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.video-details p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Video Logo */
+.video-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensures the content inside stays within the circular boundary */
+}
+
+/* Iframe Styles */
+iframe {
+  border: none;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .video-container {
+    grid-template-columns: 1fr;
+  }
+}
+.video-actions {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.video-actions .logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 80px;
+}
+
+.video-actions h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.video-actions button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.video-actions button:hover {
+  color: #007bff;
+}
+
+.btn-like {
+  margin-right: 10px;
+}
+
+.btn-download {
+  margin-left: 10px;
+}
+
+.fa-thumbs-up, .fa-download {
+  margin-right: 5px;
+}
+/* Light theme styles */
+.light-theme .btn-primary {
+  background-color: #000000; /* Light theme primary button background */
+  color: #fff; /* Light theme primary button text color */
+}
+
+.light-theme .btn-category {
+  background-color: #f8f9fa; /* Light theme category button background */
+  color: #333; /* Light theme category button text color */
+}
+
+.light-theme .btn-like,
+.light-theme .btn-download {
+  color: #333; /* Light theme text color for buttons */
+  background-color: #f0f0f0; /* Light theme background for buttons */
+}
+
+.light-theme .btn-like:hover,
+.light-theme .btn-download:hover {
+  background-color: #e0e0e0; /* Light theme hover background for buttons */
+}
+
+.light-theme .video-actions h3 {
+  color: #333; /* Light theme text color for h3 */
+}
+
+/* Dark theme styles */
+.dark-theme .btn-primary {
+  background-color: #1a1a1a; /* Dark theme primary button background */
+  color: #f5f5f5; /* Dark theme primary button text color */
+}
+
+.dark-theme .btn-category {
+  background-color: #333; /* Dark theme category button background */
+  color: #f5f5f5; /* Dark theme category button text color */
+}
+
+.dark-theme .btn-like,
+.dark-theme .btn-download {
+  color: #f5f5f5; /* Dark theme text color for buttons */
+  background-color: #555; /* Dark theme background for buttons */
+}
+
+.dark-theme .btn-like:hover,
+.dark-theme .btn-download:hover {
+  background-color: #777; /* Dark theme hover background for buttons */
+}
+
+.dark-theme .video-actions h3 {
+  color: #f5f5f5; /* Dark theme text color for h3 */
+}

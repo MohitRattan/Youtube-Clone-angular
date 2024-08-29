@@ -1,0 +1,48 @@
+/* .container {
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+} */
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px; 
+  padding: 16px; 
+}
+
+.thumbnail-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Background color for video containers */
+  border-radius: 8px; /* Rounded corners for video containers */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.thumbnail-container img,
+.thumbnail-container iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.thumbnail-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
